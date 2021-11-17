@@ -13,7 +13,7 @@ function InsideSubject(props) {
   // const { branch, room } = useParams();
 
   function goto() {
-    let routeUrl = "/TPOPage/TPOResources/" + props.subName;
+    let routeUrl = "/TPOPage/TPOResources/branch/" + props.subName;
     console.log(routeUrl);
     return <Redirect to={routeUrl} />;
   }

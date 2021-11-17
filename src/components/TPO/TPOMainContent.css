@@ -1,0 +1,74 @@
+.TPOUploadResodiv1 {
+  width: 45%;
+  /* background-color: red; */
+  display: inline-block;
+  height: 250px;
+  margin-top: 10px;
+  text-align: center;
+  float: left;
+  /* margin-left: 25%;
+  margin-right: 25%; */
+
+  text-align: center;
+}
+
+.TPOUploadResodiv2 {
+  width: 45%;
+  /* background-color: yellow; */
+  display: inline-block;
+  height: 250px;
+  margin-top: 10px;
+  padding-top: 75px;
+}
+
+.TPOUploadResoButton {
+  /* background-color: blue; */
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.TPOUploadResoLabel {
+  height: 90px;
+  display: block;
+  text-align: center;
+  /* width: 100%; */
+  background-color: #ff6b6b;
+  /* background-color: red; */
+
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding-top: 82px;
+  /* background-image: url("https://lh3.googleusercontent.com/d/1SidoBIKBTM4XgQpuPIB-K9ZuFztRkA-l=s220?authuser=0"); */
+  /* background-image: url("https://lh3.googleusercontent.com/d/1PjS4CWcgcMLi3y2b8KttNRRXpopo3Nox=s220?authuser=0"); */
+  background-image: url("https://lh3.googleusercontent.com/d/1IyhfNg0r7v7miDu5Nb8d0c6lEc0us04o=s220?authuser=0");
+  /* background-image: url("https://lh3.googleusercontent.com/d/1MhK8ScIhBRD58ukS-NKPO25U6IYr4rn6=s220?authuser=0"); */
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-right: 25%;
+  margin-left: 25%;
+}
+
+.TPOUploadResoLabel:hover {
+  background-color: red;
+}
+
+.TPOResoDisplay {
+  margin: 0.5% 1.5%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: #cc4233;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5%;
+}

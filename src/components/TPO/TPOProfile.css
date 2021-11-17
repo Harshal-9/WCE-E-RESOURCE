@@ -1,6 +1,17 @@
 .profileImg {
   text-align: center;
 }
+/* .profileHeading {
+  float: left;
+  width: 20%;
+  padding: 20px;
+}
+.profileContent {
+  float: right;
+  width: 70%;
+  padding: 20px;
+  display: block;
+} */
 
 .ProfileTdTitle {
   width: 25%;
