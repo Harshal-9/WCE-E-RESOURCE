@@ -28,6 +28,7 @@ import TPONotification from "./TPO/TPONotification";
 import TPOStudentDisplay from "./TPO/TPOStudentDisplay";
 import NewLoginDetails from "./NewLoginDetails";
 import StudentPlacementPage from "./StudentPlacementPage";
+import TPOMainContent from "./TPO/TPOMainContent";
 
 function App() {
   const [isStudentLogin, setStudentLogin] = useState(false);
@@ -159,6 +160,9 @@ function App() {
           </Route>
           <Route exact path="/TPOPage/:sub">
             <TPOBranch />
+          </Route>
+          <Route exact path="/TPOPage/TPOResources/branch/:TPOBranchRoom">
+            <TPOMainContent />
           </Route>
         </Switch>
       </Router>

@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./TPOSlideBar";
+import TPOSidebar from "./TPOSlideBar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
@@ -21,38 +21,38 @@ function Profile() {
     department: "",
     numberOfResourceUploaded: 0
   });
-  // useEffect(() => {
-  //   axios
-  //     .get("https://afternoon-ocean-57702.herokuapp.com/login", {
-  //       withCredentials: true
-  //     })
-  //     .then((res) => {
-  //       console.log(res);
-  //       if (res.data.loggedIn === false) setRole("invalid");
-  //       else {
-  //         setRole(res.data.decodedData.role);
+  useEffect(() => {
+    axios
+      .get("https://afternoon-ocean-57702.herokuapp.com/login", {
+        withCredentials: true
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.data.loggedIn === false) setRole("invalid");
+        else {
+          setRole(res.data.decodedData.role);
 
-  //         axios
-  //           .get(
-  //             "https://afternoon-ocean-57702.herokuapp.com/profile/" +
-  //               res.data.decodedData.username
-  //           )
-  //           .then((data) => {
-  //             console.log("Recived data :", data);
-  //             setUserData(data.data);
-  //           })
-  //           .catch((err) => {
-  //             console.log("error");
-  //             console.log(err.message);
-  //           });
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.log("error");
-  //       console.log(err.message);
-  //       setRole("invalid");
-  //     });
-  // }, []);
+          axios
+            .get(
+              "https://afternoon-ocean-57702.herokuapp.com/profile/" +
+                res.data.decodedData.username
+            )
+            .then((data) => {
+              console.log("Recived data :", data);
+              setUserData(data.data);
+            })
+            .catch((err) => {
+              console.log("error");
+              console.log(err.message);
+            });
+        }
+      })
+      .catch((err) => {
+        console.log("error");
+        console.log(err.message);
+        setRole("invalid");
+      });
+  }, []);
 
   return (
     <div>
@@ -60,7 +60,7 @@ function Profile() {
         <Redirect to="/login" />
       ) : (
         <div>
-          <Sidebar />
+          <TPOSidebar />
           <div className="content">
             <div className="profileImg" style={{ marginTop: "12px" }}>
               <img
