@@ -83,8 +83,8 @@ function TPOPlacementInsights() {
   }, []);
   return (
     <div>
-      {role === "invalid" ? (
-        <Redirect to="/login" />
+      {role !== "TPO" ? (
+        <Redirect to="/" />
       ) : (
         <div>
           <Sidebar />

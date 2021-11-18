@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "./TPOSlideBar";
 import axios from "axios";
+import { Redirect } from "react-router";
 
 function Notification() {
   function sendNotification(event) {
@@ -102,30 +103,40 @@ function Notification() {
 
   return (
     <div>
-      <Sidebar />
-      <div className="content" style={{ textAlign: "center" }}>
-        <h1 style={{ textAlign: "center" }}>Welcome to Notification page</h1>
-        <br />
-        <form onSubmit={sendNotification}>
-          <label style={{ textAlign: "center" }}>Add new notification</label>
-          <br />
-          <br />
-          <textarea
-            name="message"
-            required
-            row="30"
-            cols="30"
-            style={{ resize: "none", width: "500px", height: "100px" }}
-          ></textarea>
-          <br />
-          <br />
-          <button>Add new Notification</button>
-        </form>
-        <br />
-        <hr />
-        <h1>Previous notification</h1>
-        {notificationArray}
-      </div>
+      {role !== "TPO" ? (
+        <Redirect to="/" />
+      ) : (
+        <div>
+          <Sidebar />
+          <div className="content" style={{ textAlign: "center" }}>
+            <h1 style={{ textAlign: "center" }}>
+              Welcome to Notification page
+            </h1>
+            <br />
+            <form onSubmit={sendNotification}>
+              <label style={{ textAlign: "center" }}>
+                Add new notification
+              </label>
+              <br />
+              <br />
+              <textarea
+                name="message"
+                required
+                row="30"
+                cols="30"
+                style={{ resize: "none", width: "500px", height: "100px" }}
+              ></textarea>
+              <br />
+              <br />
+              <button>Add new Notification</button>
+            </form>
+            <br />
+            <hr />
+            <h1>Previous notification</h1>
+            {notificationArray}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

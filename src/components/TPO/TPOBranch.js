@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "./TPOSlideBar";
 import { useParams } from "react-router";
 import { Redirect } from "react-router-dom";
 import TPOSidebar from "./TPOSlideBar";
 import StudentSidebar from "../Sidebar";
-
-// import axios from "axios";
-// import AddNewFolder from "./AddNewFolder";
+import axios from "axios";
 
 function InsideSubject(props) {
   const [click, setClick] = useState(false);
-  // const { branch, room } = useParams();
 
   function goto() {
     let routeUrl = "/TPOPage/TPOResources/branch/" + props.subName;
@@ -59,19 +56,45 @@ function InsideSubject(props) {
 
 function Subjects() {
   const { fromWhere } = useParams();
-  console.log(fromWhere);
+  const [role, setRole] = useState("");
+
+  useEffect(() => {
+    axios
+      .get("https://afternoon-ocean-57702.herokuapp.com/login", {
+        withCredentials: true
+      })
+      .then((res) => {
+        console.log(res);
+        if (res.data.loggedIn === false) setRole("invalid");
+        //to get resources
+        else {
+          setRole(res.data.decodedData.role);
+        }
+      })
+      .catch((err) => {
+        console.log("error");
+        console.log(err.message);
+        setRole("invalid");
+      });
+  }, []);
 
   return (
     <div>
-      {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
-      <div className="content">
-        <InsideSubject subName="CSE" />
-        <InsideSubject subName="IT" />
-        <InsideSubject subName="Electronics" />
-        <InsideSubject subName="Civil" />
-        <InsideSubject subName="Mechanical" />
-        <InsideSubject subName="Electrical" />
-      </div>
+      {role !== "TPO" ? (
+        <Redirect to="/StudentPage" />
+      ) : (
+        <div>
+          {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
+          <div className="content">
+            <InsideSubject subName="CSE" />
+            <InsideSubject subName="IT" />
+            <InsideSubject subName="Electronics" />
+            <InsideSubject subName="Civil" />
+            <InsideSubject subName="Mechanical" />
+            <InsideSubject subName="Electrical" />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
