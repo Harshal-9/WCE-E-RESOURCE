@@ -34,7 +34,9 @@ function SingleCard(props) {
         >
           <FrontSide
             style={{
-              backgroundColor: "white"
+              color: "indigo",
+              backgroundImage:
+                "url(https://i.pinimg.com/originals/c1/5c/ba/c15cbae66a8a930a1cb292aaf60bb815.jpg)"
             }}
           >
             <h3>{placementDetails.name}</h3>
@@ -43,18 +45,33 @@ function SingleCard(props) {
             <hr />
             <h3>Branch : {placementDetails.branch}</h3>
           </FrontSide>
-          <BackSide style={{ backgroundColor: "white" }}>
+          <BackSide
+            style={{
+              backgroundRepeat: "no-repeat",
+              color: "indigo",
+              backgroundImage:
+                "url(https://www.vectorgraphit.com/wp-content/uploads/2014/04/trianglify-background-5.jpg)"
+            }}
+          >
             <h3>Year of Passing : {placementDetails.yearOfPassing}</h3>
             <hr />
             <h3>
-              <a href={placementDetails.interViewExperience}>
+              <a
+                style={{ color: "blue" }}
+                href={placementDetails.interViewExperience}
+              >
                 Interview Experience
               </a>
             </h3>
 
             <hr />
             <h3>
-              <a href={placementDetails.linkedinProfile}>Linkedin Profile</a>
+              <a
+                style={{ color: "blue" }}
+                href={placementDetails.linkedinProfile}
+              >
+                Linkedin Profile
+              </a>
             </h3>
           </BackSide>
         </Flippy>
@@ -249,8 +266,20 @@ function TPOStudentDisplay() {
   return (
     <div>
       {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
-      <div className="content">
-        <h1 style={{ textAlign: "center" }}>Placement Insights</h1>
+      <div
+        className="content"
+        style={{
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+          backgroundImage:
+            // "url(https://www.vectorgraphit.com/wp-content/uploads/2014/04/trianglify-background-21.jpg)"
+            // "url(https://media.istockphoto.com/photos/abstract-trianglify-background-picture-id524148056?k=20&m=524148056&s=170667a&w=0&h=Dnz95SqNav9uVsvNYiO8SvN284nEpGN3j2lYZZsd5KY=)"
+            "url(https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png)"
+        }}
+      >
+        <h1 style={{ textAlign: "center", color: "indigo" }}>
+          Placement Insights
+        </h1>
         <br />
         <br />
         <TPOInsightsCode />
