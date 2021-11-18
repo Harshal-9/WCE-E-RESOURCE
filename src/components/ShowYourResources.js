@@ -236,7 +236,7 @@ function ShowYourResources() {
   return (
     <div>
       {role === "invalid" ? (
-        <Redirect to="/login" />
+        <Redirect to="/" />
       ) : (
         <div>
           <Sidebar />
