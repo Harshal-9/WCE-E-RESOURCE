@@ -7,9 +7,11 @@ import Flippy, { FrontSide, BackSide } from "react-flippy";
 import axios from "axios";
 import { Redirect } from "react-router-dom";
 import { useParams } from "react-router";
+import Select from "react-select";
 
 function SingleCard(props) {
-  console.log("in single card", props.data);
+  // console.log("in single card", props.data);
+
   const placementDetails = {
     name: props.data.name.firstName + " " + props.data.name.lastName,
     branch: props.data.branch,
@@ -62,25 +64,52 @@ function SingleCard(props) {
 }
 
 function TPOInsightsCode() {
+  // function to filter data
+  function filterData(event) {
+    let tempCompany = [];
+    let tempBranch = [];
+    let tempYear = [];
+
+    // console.log(selectedCompany, selectedBranch, selectedYear);
+
+    for (let i = 0; i < cardArray.length; i++) {
+      if (selectedCompany === "") tempCompany.push(cardArray[i]);
+
+      if (cardArray[i].props.data.company === selectedCompany) {
+        tempCompany.push(cardArray[i]);
+      }
+    }
+    for (let i = 0; i < cardArray.length; i++) {
+      if (selectedBranch === "") tempBranch.push(cardArray[i]);
+
+      if (cardArray[i].props.data.branch === selectedBranch) {
+        tempBranch.push(cardArray[i]);
+      }
+    }
+    for (let i = 0; i < cardArray.length; i++) {
+      if (selectedYear === 0) tempYear.push(cardArray[i]);
+      if (cardArray[i].props.data.yearOfPassing === selectedYear) {
+        tempYear.push(cardArray[i]);
+      }
+    }
+
+    const intersectionData = [tempCompany, tempBranch, tempYear];
+    const result = intersectionData.reduce((a, b) =>
+      a.filter((c) => b.includes(c))
+    );
+
+    setFilteredCardArray(result);
+  }
+
   const [role, setRole] = useState("");
   const [cardArray, setCardArray] = useState([]);
-  const [userData, setUserData] = useState({
-    name: {
-      firstName: "",
-      middleName: "",
-      lastName: ""
-    },
-    branch: "",
-    yearOfPassing: 0,
-    company: "",
-    driveLink: {
-      webViewLink: "",
-      webContentLink: "",
-      id: ""
-    },
-    linkedinProfile: "",
-    timestamp: ""
-  });
+  const [filteredCardArray, setFilteredCardArray] = useState([]);
+  const [companies, setCompanies] = useState([]);
+  const [yearArray, setYearArray] = useState([]);
+
+  const [selectedCompany, setSelectedCompany] = useState("");
+  const [selectedBranch, setSelectedBranch] = useState("");
+  const [selectedYear, setSelectedYear] = useState(0);
 
   useEffect(() => {
     axios
@@ -94,15 +123,50 @@ function TPOInsightsCode() {
           setRole(res.data.decodedData.role);
 
           axios
+            .get("https://afternoon-ocean-57702.herokuapp.com/company")
+            .then((res) => {
+              console.log(res);
+              let tempArray = [{ label: "TCS", value: "TCS" }];
+              for (let i = 0; i < res.data.length; i++) {
+                tempArray.push({
+                  label: res.data[i].company,
+                  value: res.data[i].company
+                });
+              }
+              setCompanies(tempArray);
+            })
+            .catch((err) => {
+              console.log("error", err);
+            });
+
+          axios
             .get("https://afternoon-ocean-57702.herokuapp.com/placement")
             .then((data) => {
               console.log("Recived data :", data);
               let receivedData = data.data;
               for (let i = 0; i < receivedData.length; i++) {
                 console.log(receivedData[i]);
+                //setting all card data
                 setCardArray((arr) =>
                   arr.concat(<SingleCard data={receivedData[i]} />)
                 );
+                //setting all card data to filter array
+                setFilteredCardArray((arr) =>
+                  arr.concat(<SingleCard data={receivedData[i]} />)
+                );
+
+                setYearArray((arr) => {
+                  if (
+                    !arr.find((element) => {
+                      return element.label === receivedData[i].yearOfPassing;
+                    })
+                  ) {
+                    return arr.concat({
+                      label: receivedData[i].yearOfPassing,
+                      value: receivedData[i].yearOfPassing
+                    });
+                  } else return arr;
+                });
               }
               // setUserData(data.data);
             })
@@ -124,11 +188,54 @@ function TPOInsightsCode() {
         <Redirect to="/login" />
       ) : (
         <div>
-          <div class="TPORow">
-            {/* <SingleCard /> */}
-
-            {cardArray}
+          <Select
+            options={companies}
+            placeholder="Select a Company"
+            onChange={(event) => {
+              console.log(event.value);
+              setSelectedCompany(event.value);
+            }}
+          />
+          <br />
+          <Select
+            options={[
+              { label: "CSE", value: "CSE" },
+              { label: "IT", value: "IT" },
+              { label: "ELECTRONICS", value: "ELECTRONICS" },
+              { label: "ELECTRICAL", value: "ELECTRICAL" },
+              { label: "MECH", value: "MECH" },
+              { label: "CIVIL", value: "CIVIL" }
+            ]}
+            placeholder="Select a Branch"
+            onChange={(event) => {
+              console.log(event.value);
+              setSelectedBranch(event.value);
+            }}
+          />
+          <br />
+          <Select
+            options={yearArray}
+            placeholder="Select year of passing"
+            onChange={(event) => {
+              console.log(event.value);
+              setSelectedYear(event.value);
+            }}
+          />
+          <br />
+          <br />
+          <div style={{ textAlign: "center" }}>
+            <button onClick={filterData}>GO</button>
+            <button
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              Clear
+            </button>
           </div>
+          <br />
+          <br />
+          <div class="TPORow">{filteredCardArray}</div>
         </div>
       )}
     </div>
@@ -143,7 +250,7 @@ function TPOStudentDisplay() {
     <div>
       {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
       <div className="content">
-        <h1 style={{ textAlign: "center" }}>PlacementInsights</h1>
+        <h1 style={{ textAlign: "center" }}>Placement Insights</h1>
         <br />
         <br />
         <TPOInsightsCode />
