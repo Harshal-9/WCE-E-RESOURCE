@@ -9,7 +9,7 @@ function Logout() {
       <div className="content" style={{ verticalAlign: "center" }}>
         <div className="logout">
           <h1>Are you sure you want to logout ? </h1>
-          <Link to="/Login">
+          <Link to="/">
             <button className="logoutButton">Logout</button>
           </Link>
           <Link to="/TPOPage">

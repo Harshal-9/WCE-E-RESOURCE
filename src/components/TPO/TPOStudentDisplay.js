@@ -185,7 +185,7 @@ function TPOInsightsCode() {
   return (
     <div>
       {role === "invalid" ? (
-        <Redirect to="/login" />
+        <Redirect to="/" />
       ) : (
         <div>
           <Select
