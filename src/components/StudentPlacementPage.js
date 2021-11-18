@@ -68,60 +68,73 @@ function StudentPlacementPage() {
 
   return (
     <div>
-      <Sidebar />
-      <div className="content">
-        <div style={{ textAlign: "center", color: "red", fontSize: "20px" }}>
-          {notificationArray}
-          <br />
-          <hr />
-          <br />
-
-          <div
-            style={{ display: "inline-block" }}
-            onClick={handlePlacementResource}
-          >
-            <img
-              src="https://lh3.googleusercontent.com/d/1jkOCUuvYogTvKOLB9Bo8cQ1-MQ8G3tgc=s220?authuser=0"
-              alt="img"
-              width="300px"
-              height="300px"
-              className="PlacementResourceDiv"
-              onClick={() => {
-                console.log("Folder opened");
-              }}
-              id="placementResource"
-            />
-            <label
-              htmlFor="placementResource"
-              className="StudentPlacementPageResourceLabel PlacementResourceDiv"
+      {role === "invalid" ? (
+        <Redirect to="/login" />
+      ) : (
+        <div>
+          <Sidebar />
+          <div className="content">
+            <div
+              style={{ textAlign: "center", color: "red", fontSize: "20px" }}
             >
-              View Placement Resources
-            </label>
-          </div>
+              {notificationArray}
+              <br />
+              <hr />
+              <br />
 
-          <div style={{ display: "inline-block" }} onClick={handleViewInsights}>
-            <img
-              src="https://lh3.googleusercontent.com/d/1av-HJ4V5S_twpUXN7Z6JAlHpZ_645Rif=s220?authuser=0"
-              alt="img"
-              width="300px"
-              height="220px"
-              className="ViewInsightsDiv"
-              onClick={() => {
-                console.log("Folder opened");
-              }}
-              style={{ marginBottom: "40px", marginTop: "40px" }}
-            />
-            <label
-              htmlFor="placementResource"
-              className="StudentPlacementPageResourceLabel ViewInsightsDiv"
-            >
-              View Placement Insights
-            </label>
+              <div
+                style={{ display: "inline-block" }}
+                onClick={handlePlacementResource}
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/d/1jkOCUuvYogTvKOLB9Bo8cQ1-MQ8G3tgc=s220?authuser=0"
+                  alt="img"
+                  width="300px"
+                  height="300px"
+                  className="PlacementResourceDiv"
+                  onClick={() => {
+                    console.log("Folder opened");
+                  }}
+                  id="placementResource"
+                />
+                <label
+                  htmlFor="placementResource"
+                  className="StudentPlacementPageResourceLabel PlacementResourceDiv"
+                >
+                  View Placement Resources
+                </label>
+              </div>
+
+              <div
+                style={{ display: "inline-block" }}
+                onClick={handleViewInsights}
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/d/1av-HJ4V5S_twpUXN7Z6JAlHpZ_645Rif=s220?authuser=0"
+                  alt="img"
+                  width="300px"
+                  height="220px"
+                  className="ViewInsightsDiv"
+                  onClick={() => {
+                    console.log("Folder opened");
+                  }}
+                  style={{ marginBottom: "40px", marginTop: "40px" }}
+                />
+                <label
+                  htmlFor="placementResource"
+                  className="StudentPlacementPageResourceLabel ViewInsightsDiv"
+                >
+                  View Placement Insights
+                </label>
+              </div>
+              {click1 ? <Redirect to="/TPOPage/TPOResources/student" /> : null}
+              {click2 ? (
+                <Redirect to="/TPOPage/TPOInsightsView/student" />
+              ) : null}
+            </div>
           </div>
-          {click1 ? <Redirect to="/TPOPage/TPOResources/student" /> : null}
-          {click2 ? <Redirect to="/TPOPage/TPOInsightsView/student" /> : null}
         </div>
-      </div>
+      )}
     </div>
   );
 }
