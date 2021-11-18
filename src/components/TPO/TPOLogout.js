@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "./TPOSlideBar";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Logout() {
   return (
@@ -10,7 +11,23 @@ function Logout() {
         <div className="logout">
           <h1>Are you sure you want to logout ? </h1>
           <Link to="/">
-            <button className="logoutButton">Logout</button>
+            <button
+              className="logoutButton"
+              onClick={() => {
+                axios
+                  .get("https://afternoon-ocean-57702.herokuapp.com/logout", {
+                    withCredentials: true
+                  })
+                  .then((res) => {
+                    console.log("After clicking logout", res);
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
+              }}
+            >
+              Logout
+            </button>
           </Link>
           <Link to="/TPOPage">
             <button className="cancel">Cancel</button>

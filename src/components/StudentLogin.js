@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 
 function StudentLogin() {
   const [loginSuccess, setLoginSuccess] = useState(false);
-
+  const [role, setRole] = useState("");
   function handleSubmit(event) {
     event.preventDefault();
     // console.log(event.target.username.value, event.target.password.value);
@@ -21,11 +21,17 @@ function StudentLogin() {
       .then((res) => {
         console.log(res);
 
-        if (res.data.loggedIn === false) alert("Invalid login credentials");
-        else setLoginSuccess(true);
+        if (res.data.loggedIn === false) {
+          setRole("invalid");
+          alert("Invalid login credentials");
+        } else {
+          setRole(res.data.decodedData.role);
+          setLoginSuccess(true);
+        }
       })
       .catch((err) => {
         console.log(err.message);
+        setRole("invalid");
         alert("Error occured");
       });
   }
@@ -45,7 +51,13 @@ function StudentLogin() {
           <button>Login</button>
           <br />
         </div>
-        {loginSuccess ? <Redirect to="/StudentPage/Profile" /> : null}
+        {loginSuccess ? (
+          role === "TPO" ? (
+            <Redirect to="/TPOPage" />
+          ) : (
+            <Redirect to="/StudentPage" />
+          )
+        ) : null}
       </form>
     </div>
   );

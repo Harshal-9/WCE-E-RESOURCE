@@ -12,11 +12,12 @@ function TPO() {
         withCredentials: true
       })
       .then((res) => {
-        console.log(res);
+        console.log("IN TPO ", res);
         if (res.data.loggedIn === false) setRole("invalid");
         //to get resources
         else {
           setRole(res.data.decodedData.role);
+          console.log("In else", res.data.decodedData.role);
         }
       })
       .catch((err) => {
@@ -28,12 +29,10 @@ function TPO() {
 
   return (
     <div>
-      {role !== "TPO" ? (
+      {role === "invalid" || role === "faculty" || role === "student" ? (
         <Redirect to="/" />
       ) : (
-        <div>
-          <TPOSlideBar />
-        </div>
+        <TPOSlideBar />
       )}
     </div>
   );
