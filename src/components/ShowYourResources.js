@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import "./ShowYourResources.css";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
+import Select from "react-select";
 
 function ShowYourResourcesCode(props) {
   // function for deleting resources
@@ -11,16 +12,6 @@ function ShowYourResourcesCode(props) {
     const fd = new FormData();
 
     let tempRoute = "";
-
-    // const dataToSend = {};
-    // if (receivedObj.driveId) {
-    //   tempRoute = "uploadFile";
-    //   dataToSend.mongoId = receivedObj.mongoId;
-    //   dataToSend.driveId = receivedObj.driveId;
-    // } else {
-    //   tempRoute = "uploadLink";
-    //   dataToSend.mongoId = receivedObj.mongoId;
-    // }
 
     if (receivedObj.driveId) {
       tempRoute = "uploadFile";
@@ -94,15 +85,39 @@ function ShowYourResourcesCode(props) {
 // -------------------------------------------------------------------
 
 function ShowYourResources() {
-  // const author = {
-  //   name: "Harshal Kodgire",
-  //   PRN: "2019BTECS00029",
-  //   email: "a@b.com",
-  //   username: "harshal.kodgire@walchand"
-  // };
+  // function to display data according to selected resource name
+  function filterResourceData(event) {
+    console.log("Here : ", event.value);
+    let temp = [];
+
+    for (let i = 0; i < allresourceElements.length; i++) {
+      if (allresourceElements[i].props.data.resourceName === event.value) {
+        console.log(allresourceElements[i]);
+        temp.push(allresourceElements[i]);
+      }
+    }
+    setArr(temp);
+  }
+
+  // function to display data according to selected author name
+  function filterAuthorData(event) {
+    console.log("Here : ", event.value);
+    let temp = [];
+
+    for (let i = 0; i < allresourceElements.length; i++) {
+      if (allresourceElements[i].props.data.author.username === event.value) {
+        console.log(allresourceElements[i]);
+        temp.push(allresourceElements[i]);
+      }
+    }
+    setArr(temp);
+  }
 
   const [arr, setArr] = useState([]);
   const [role, setRole] = useState("");
+  const [allresourceElements, setAllResourceElements] = useState([]);
+  const [filteredResourceNames, setFilteredResourceNames] = useState([]);
+  const [filteredAuthorNames, setFilteredAuthorNames] = useState([]);
 
   useEffect(() => {
     axios
@@ -122,7 +137,8 @@ function ShowYourResources() {
                 const RecievedResources = data.data;
 
                 for (let i = 0; i < RecievedResources.length; i++) {
-                  setArr((arr) =>
+                  //setting for all resources
+                  setAllResourceElements((arr) =>
                     arr.concat(
                       <ShowYourResourcesCode
                         data={RecievedResources[i]}
@@ -130,6 +146,31 @@ function ShowYourResources() {
                       />
                     )
                   );
+
+                  //setting for filtered resources
+                  setFilteredResourceNames((arr) =>
+                    arr.concat({
+                      label: RecievedResources[i].resourceName,
+                      value: RecievedResources[i].resourceName
+                    })
+                  );
+
+                  //setting for filtered author name
+                  setFilteredAuthorNames((arr) => {
+                    console.log("Arr:", arr);
+                    if (
+                      !arr.find((element) => {
+                        return (
+                          element.label === RecievedResources[i].author.username
+                        );
+                      })
+                    ) {
+                      return arr.concat({
+                        label: RecievedResources[i].author.username,
+                        value: RecievedResources[i].author.username
+                      });
+                    } else return arr;
+                  });
                 }
               })
               .catch((err) => {
@@ -145,7 +186,8 @@ function ShowYourResources() {
                 const RecievedResources = data.data;
 
                 for (let i = 0; i < RecievedResources.length; i++) {
-                  setArr((arr) =>
+                  //setting for all resources
+                  setAllResourceElements((arr) =>
                     arr.concat(
                       <ShowYourResourcesCode
                         data={RecievedResources[i]}
@@ -153,6 +195,29 @@ function ShowYourResources() {
                       />
                     )
                   );
+                  //setting for filtered resources
+                  setFilteredResourceNames((arr) =>
+                    arr.concat({
+                      label: RecievedResources[i].resourceName,
+                      value: RecievedResources[i].resourceName
+                    })
+                  );
+                  //setting for filtered author name
+                  setFilteredAuthorNames((arr) => {
+                    console.log("Arr:", arr);
+                    if (
+                      !arr.find((element) => {
+                        return (
+                          element.label === RecievedResources[i].author.username
+                        );
+                      })
+                    ) {
+                      return arr.concat({
+                        label: RecievedResources[i].author.username,
+                        value: RecievedResources[i].author.username
+                      });
+                    } else return arr;
+                  });
                 }
               })
               .catch((err) => {
@@ -179,20 +244,65 @@ function ShowYourResources() {
             <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
               Resources uploaded by you :-
             </h2>
-            <br />
-            <tr>
-              <td className="ShowYourResources_srno">SrNo</td>
-              <td className="ShowYourResources_td">Resource Name</td>
-              <td className="ShowYourResources_view">View</td>
-              <td className="ShowYourResources_download">Download</td>
-              <td className="ShowYourResources_td">Date</td>
-              <td className="ShowYourResources_td">Room</td>
-              <td className="ShowYourResources_td">Author</td>
-              <td className="ShowYourResources_td">Delete</td>
-            </tr>
-            <hr />
-            {arr}
-            <br />
+
+            <div style={{ textAlign: "center" }}>
+              <h2 style={{ display: "inline-block", marginRight: "10px" }}>
+                Filter :
+              </h2>
+              <Select
+                options={filteredResourceNames}
+                className="searchResource"
+                onChange={filterResourceData}
+                placeholder="Search by Name"
+              />
+              <Select
+                options={filteredAuthorNames}
+                className="searchResource"
+                onChange={filterAuthorData}
+                placeholder="Search by Author"
+              />
+              <br />
+              <br />
+              <br />
+              {arr.length > 0 ? (
+                <tr>
+                  <td className="ShowYourResources_srno">SrNo</td>
+                  <td className="ShowYourResources_td">Resource Name</td>
+                  <td className="ShowYourResources_view">View</td>
+                  <td className="ShowYourResources_download">Download</td>
+                  <td className="ShowYourResources_td">Date</td>
+                  <td className="ShowYourResources_td">Room</td>
+                  <td className="ShowYourResources_td">Author</td>
+                  <td className="ShowYourResources_td">Delete</td>
+                </tr>
+              ) : null}
+              <hr />
+              {arr}
+            </div>
+            <div>
+              <br />
+              <div
+                style={{
+                  textAlign: "center"
+                }}
+              >
+                <h2>All resources</h2>
+              </div>
+              <br />
+              <tr>
+                <td className="ShowYourResources_srno">SrNo</td>
+                <td className="ShowYourResources_td">Resource Name</td>
+                <td className="ShowYourResources_view">View</td>
+                <td className="ShowYourResources_download">Download</td>
+                <td className="ShowYourResources_td">Date</td>
+                <td className="ShowYourResources_td">Room</td>
+                <td className="ShowYourResources_td">Author</td>
+                <td className="ShowYourResources_td">Delete</td>
+              </tr>
+              <hr />
+              {allresourceElements}
+              <br />
+            </div>
           </div>
         </div>
       )}

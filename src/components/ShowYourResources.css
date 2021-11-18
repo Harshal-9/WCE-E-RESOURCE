@@ -24,3 +24,9 @@ table {
   overflow: hidden;
   white-space: nowrap;
 }
+
+.searchResource {
+  width: 25%;
+  display: inline-block;
+  margin-right: 10px;
+}
