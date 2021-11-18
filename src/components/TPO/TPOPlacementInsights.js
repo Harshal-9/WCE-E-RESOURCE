@@ -47,6 +47,8 @@ function TPOPlacementInsights() {
   const [companiesArray, setCompaniesArray] = useState([
     { label: "TCS", value: "TCS" }
   ]);
+  const [labelName, setLabelName] = useState("Upload Here");
+
   useEffect(() => {
     axios
       .get("https://afternoon-ocean-57702.herokuapp.com/login", {
@@ -83,9 +85,7 @@ function TPOPlacementInsights() {
   }, []);
   return (
     <div>
-      {role !== "TPO" ? (
-        <Redirect to="/" />
-      ) : (
+      {role === "" || role === "TPO" ? (
         <div>
           <Sidebar />
           <div className="content">
@@ -166,12 +166,16 @@ function TPOPlacementInsights() {
                     borderWidth: "0.5px"
                   }}
                 >
-                  Choose file
+                  {labelName}
                 </label>
                 <input
                   type="file"
                   id="interviewExp"
                   hidden
+                  onChange={(event) => {
+                    if (event.target.files[0].name)
+                      setLabelName(event.target.files[0].name);
+                  }}
                   name="interviewExp"
                 ></input>
                 <br />
@@ -192,6 +196,8 @@ function TPOPlacementInsights() {
             </div>
           </div>
         </div>
+      ) : (
+        <Redirect to="/" />
       )}
     </div>
   );

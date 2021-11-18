@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TPOSlideBar from "./TPOSlideBar";
 import { Redirect } from "react-router";
 import axios from "axios";
+import Sidebar from "./TPOSlideBar";
 
 function TPO() {
   const [role, setRole] = useState("");
@@ -25,15 +26,11 @@ function TPO() {
         console.log(err.message);
         setRole("invalid");
       });
-  }, []);
+  }, [role]);
 
   return (
     <div>
-      {role === "invalid" || role === "faculty" || role === "student" ? (
-        <Redirect to="/" />
-      ) : (
-        <TPOSlideBar />
-      )}
+      {role === "" || role === "TPO" ? <Sidebar /> : <Redirect to="/" />}
     </div>
   );
 }

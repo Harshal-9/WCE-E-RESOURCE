@@ -103,9 +103,7 @@ function Notification() {
 
   return (
     <div>
-      {role !== "TPO" ? (
-        <Redirect to="/" />
-      ) : (
+      {role === "" || role === "TPO" ? (
         <div>
           <Sidebar />
           <div className="content" style={{ textAlign: "center" }}>
@@ -136,6 +134,8 @@ function Notification() {
             {notificationArray}
           </div>
         </div>
+      ) : (
+        <Redirect to="/" />
       )}
     </div>
   );
