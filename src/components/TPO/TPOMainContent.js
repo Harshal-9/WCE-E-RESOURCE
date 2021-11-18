@@ -239,7 +239,7 @@ function TPOMainContent() {
   return (
     <div>
       {role === "invalid" ? (
-        <Redirect to="/login" />
+        <Redirect to="/" />
       ) : (
         <div>
           {role === "TPO" ? <TPOSidebar /> : <Sidebar />}
