@@ -158,9 +158,9 @@ function App() {
           <Route exact path="/TPOPage/TPOResources/:fromWhere">
             <TPOBranch />
           </Route>
-          <Route exact path="/TPOPage/:sub">
+          {/* <Route exact path="/TPOPage/:sub">
             <TPOBranch />
-          </Route>
+          </Route> */}
           <Route exact path="/TPOPage/TPOResources/branch/:TPOBranchRoom">
             <TPOMainContent />
           </Route>

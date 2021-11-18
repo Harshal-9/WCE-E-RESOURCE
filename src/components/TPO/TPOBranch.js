@@ -80,21 +80,15 @@ function Subjects() {
 
   return (
     <div>
-      {role !== "TPO" ? (
-        <Redirect to="/StudentPage" />
-      ) : (
-        <div>
-          {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
-          <div className="content">
-            <InsideSubject subName="CSE" />
-            <InsideSubject subName="IT" />
-            <InsideSubject subName="Electronics" />
-            <InsideSubject subName="Civil" />
-            <InsideSubject subName="Mechanical" />
-            <InsideSubject subName="Electrical" />
-          </div>
-        </div>
-      )}
+      {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
+      <div className="content">
+        <InsideSubject subName="CSE" />
+        <InsideSubject subName="IT" />
+        <InsideSubject subName="Electronics" />
+        <InsideSubject subName="Civil" />
+        <InsideSubject subName="Mechanical" />
+        <InsideSubject subName="Electrical" />
+      </div>
     </div>
   );
 }

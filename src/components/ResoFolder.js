@@ -16,7 +16,8 @@ function ResoFolder(props) {
       room === "Sem 5" ||
       room === "Sem 6" ||
       room === "Sem 7" ||
-      room === "Sem 8"
+      room === "Sem 8" ||
+      room === "Gate"
     ) {
       return <Redirect to={routeUrl} />;
     } else {

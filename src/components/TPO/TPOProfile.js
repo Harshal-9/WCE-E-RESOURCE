@@ -56,9 +56,7 @@ function Profile() {
 
   return (
     <div>
-      {role === "invalid" ? (
-        <Redirect to="/" />
-      ) : (
+      {role === "" || role === "TPO" ? (
         <div>
           <TPOSidebar />
           <div className="content">
@@ -142,6 +140,8 @@ function Profile() {
             <br />
           </div>
         </div>
+      ) : (
+        <Redirect to="/" />
       )}
     </div>
   );
