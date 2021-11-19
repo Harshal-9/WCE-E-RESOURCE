@@ -88,16 +88,33 @@ function TPOPlacementInsights() {
       {role === "" || role === "TPO" ? (
         <div>
           <Sidebar />
-          <div className="content">
+          <div
+            className="content"
+            style={{
+              color: "white",
+              // backgroundColor: "#4b84bd"
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+              backgroundImage:
+                "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+            }}
+          >
             <div
               className="TPOPI"
               style={{
+                boxShadow: "10px 10px white",
                 borderStyle: "solid",
                 borderWidth: "0.5px",
-                marginTop: "40px"
+                marginTop: "40px",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "100% 100%",
+                backgroundImage:
+                  "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
               }}
             >
-              <h1 style={{ textAlign: "center" }}>PLACEMENT INSIGHTS</h1>
+              <h1 style={{ textAlign: "center" }}>
+                <q>PLACEMENT INSIGHTS</q>
+              </h1>
               <br />
               <form style={{ textAlign: "center" }} onSubmit={sendData}>
                 <label htmlFor="fName">Enter first Name : </label>

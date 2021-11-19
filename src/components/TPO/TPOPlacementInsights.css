@@ -2,10 +2,13 @@
   text-align: center;
   margin-left: 20%;
   margin-right: 20%;
+  /* color: white; */
 }
 
 .companySelect,
 .branchSelect {
   width: 30%;
   display: inline-block;
+  color: black;
+  /* background-color: #327ac2; */
 }

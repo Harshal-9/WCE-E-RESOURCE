@@ -21,7 +21,8 @@ function InsideSubject(props) {
         height: "140px",
         width: "100px",
         textAlign: "center",
-        display: "inline-block"
+        display: "inline-block",
+        marginRight: "5%"
       }}
     >
       <img
@@ -81,13 +82,26 @@ function Subjects() {
   return (
     <div>
       {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
-      <div className="content">
-        <InsideSubject subName="CSE" />
-        <InsideSubject subName="IT" />
-        <InsideSubject subName="Electronics" />
-        <InsideSubject subName="Civil" />
-        <InsideSubject subName="Mechanical" />
-        <InsideSubject subName="Electrical" />
+      <div
+        className="content"
+        style={{
+          color: "white",
+          height: "580px",
+          // backgroundColor: "#4b84bd"
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+          backgroundImage:
+            "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+        }}
+      >
+        <div style={{ display: "inline-block", margin: "10% 35%" }}>
+          <InsideSubject subName="CSE" />
+          <InsideSubject subName="IT" />
+          <InsideSubject subName="Electronics" />
+          <InsideSubject subName="Civil" />
+          <InsideSubject subName="Mechanical" />
+          <InsideSubject subName="Electrical" />
+        </div>
       </div>
     </div>
   );

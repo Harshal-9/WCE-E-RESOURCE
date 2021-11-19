@@ -64,10 +64,12 @@ function Notification() {
                 setNotificationArray((arr) =>
                   arr.concat(
                     <div>
-                      <div style={{ textAlign: "left", color: "indigo" }}>
+                      <div style={{ textAlign: "left", color: "white" }}>
                         <p style={{ display: "inline-block" }}>
                           <b>{receivedData[i].message} </b>
-                          <small style={{ fontSize: "0.9rem", color: "grey" }}>
+                          <small
+                            style={{ fontSize: "0.9rem", color: "silver" }}
+                          >
                             {timeSince(receivedData[i].time)}
                           </small>
                         </p>
@@ -106,7 +108,18 @@ function Notification() {
       {role === "" || role === "TPO" ? (
         <div>
           <Sidebar />
-          <div className="content" style={{ textAlign: "center" }}>
+          <div
+            className="content"
+            style={{
+              textAlign: "center",
+              color: "white",
+              // backgroundColor: "#4b84bd"
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+              backgroundImage:
+                "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+            }}
+          >
             <h1 style={{ textAlign: "center" }}>
               Welcome to Notification page
             </h1>
@@ -122,7 +135,14 @@ function Notification() {
                 required
                 row="30"
                 cols="30"
-                style={{ resize: "none", width: "500px", height: "100px" }}
+                style={{
+                  resize: "none",
+                  width: "500px",
+                  height: "100px",
+                  backgroundColor: "#85bef7",
+                  // backgroundColor: "#327ac2",
+                  color: "black"
+                }}
               ></textarea>
               <br />
               <br />
