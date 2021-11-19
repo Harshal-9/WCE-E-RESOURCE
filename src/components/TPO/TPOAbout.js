@@ -8,8 +8,19 @@ function About() {
     <div>
       <Sidebar />
       {/* <TPONotification /> */}
-      <div className="content">
-        <h2 style={{ textAlign: "center" }}>About </h2>
+      <div
+        className="content"
+        style={{
+          color: "white",
+          height: "580px",
+          // backgroundColor: "#4b84bd"
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+          backgroundImage:
+            "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+        }}
+      >
+        <h1 style={{ textAlign: "center" }}>About </h1>
         <img
           className="wceimgAbout"
           src="http://1.bp.blogspot.com/-UuzDvRUXjh8/Tdxi-0uSVkI/AAAAAAAAAUU/jRfpkra_mmc/s1600/Walchand+college+of+engineering%252C+sangli+memories_Cool+AMPSS....jpg"
