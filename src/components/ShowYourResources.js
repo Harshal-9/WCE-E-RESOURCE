@@ -63,7 +63,7 @@ function ShowYourResourcesCode(props) {
   ];
 
   return (
-    <div style={{ backgroundColor: "wheat" }}>
+    <div style={{ backgroundColor: "wheat", color: "black" }}>
       <tr>
         <td className="ShowYourResources_srno">{resources[0].srNO}</td>
         <td className="ShowYourResources_td">{resources[0].resourceName}</td>
@@ -240,7 +240,18 @@ function ShowYourResources() {
       ) : (
         <div>
           <Sidebar />
-          <div className="content ">
+          <div
+            className="content "
+            style={{
+              textAlign: "center",
+              color: "white",
+              // backgroundColor: "#4b84bd"
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+              backgroundImage:
+                "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+            }}
+          >
             <h2 style={{ textAlign: "center", marginBottom: "30px" }}>
               Resources uploaded by you :-
             </h2>

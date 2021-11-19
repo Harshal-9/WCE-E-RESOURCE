@@ -61,10 +61,18 @@ function Profile() {
       ) : (
         <div>
           <Sidebar />
-          <div className="content">
+          <div
+            className="content"
+            style={{
+              backgroundSize: "100% 100%",
+              backgroundRepeat: "no-repeat",
+              backgroundImage:
+                "url(https://t4.ftcdn.net/jpg/03/09/98/05/360_F_309980531_cX4DU03cgU35JKFrpRcbZlSQcaptgfx9.jpg)"
+            }}
+          >
             <div
               className="profileImg"
-              style={{ marginTop: "12px", textAlign: "center" }}
+              style={{ marginTop: "20px", textAlign: "center" }}
             >
               <div
                 style={{

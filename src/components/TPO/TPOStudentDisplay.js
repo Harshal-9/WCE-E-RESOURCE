@@ -278,7 +278,7 @@ function TPOStudentDisplay() {
         }}
       >
         <h1 style={{ textAlign: "center", color: "indigo" }}>
-          Placement Insights
+          PLACEMENT INSIGHTS
         </h1>
         <br />
         <br />

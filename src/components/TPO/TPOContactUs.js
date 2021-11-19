@@ -18,9 +18,7 @@ function ContactUs() {
             "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
         }}
       >
-        <h1 style={{ textAlign: "center", marginTop: "30px" }}>
-          <q>Contact Us </q>
-        </h1>
+        <h1 style={{ textAlign: "center", marginTop: "30px" }}>CONTACT US</h1>
         <br />
         <br />
         <div
@@ -41,7 +39,9 @@ function ContactUs() {
             Sangli - 416 415 Maharashtra, India Tel: +91-233-2300383
             Fax:+91-233-2300831
             <br />
-            <a href="www.walchandsangli.ac.in">www.walchandsangli.ac.in </a>
+            <a style={{ color: "white" }} href="www.walchandsangli.ac.in">
+              www.walchandsangli.ac.in{" "}
+            </a>
           </h4>
         </div>
         <div
@@ -55,7 +55,7 @@ function ContactUs() {
               "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
           }}
         >
-          <h2>Contact me :</h2>
+          <h2>CONTACT US :</h2>
           <form
             action="mailto:nick22052000@gmail.com"
             method="POST"
@@ -116,19 +116,19 @@ function ContactUs() {
           <h4>
             <br />
             TPO :{" "}
-            <a href="placement@walchandsangli.ac.in">
+            <a style={{ color: "white" }} href="placement@walchandsangli.ac.in">
               placement@walchandsangli.ac.in
             </a>
             <br />
             <br />
             Acadamics :{" "}
-            <a href="hod.cse@walchandsangli.ac.in">
+            <a style={{ color: "white" }} href="hod.cse@walchandsangli.ac.in">
               hod.cse@walchandsangli.ac.in
             </a>
             <br />
             <br />
             Admins :{" "}
-            <a href="hod.cse@walchandsangli.ac.in">
+            <a style={{ color: "white" }} href="hod.cse@walchandsangli.ac.in">
               hod.cse@walchandsangli.ac.in
             </a>
           </h4>

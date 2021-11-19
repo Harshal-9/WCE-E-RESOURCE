@@ -24,7 +24,7 @@ function Logout() {
           className="logout"
           style={{
             color: "black",
-            backgroundColor: "white",
+            backgroundColor: "#ADD8E6",
             marginTop: "150px"
           }}
         >
