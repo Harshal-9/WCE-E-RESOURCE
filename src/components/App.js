@@ -44,11 +44,19 @@ function App() {
           <Route exact path="/">
             <div className="Home">
               <div className="div1">
-                <img
+                {/* <img
                   className="wceimg"
                   src="https://uni.wcoeapps.in/site/static/images/wcoe.jpg"
                   alt="wce"
+                /> */}
+                <img
+                  src="https://uni.wcoeapps.in/site/static/images/wcoe.jpg"
+                  alt="wceImg"
+                  width="75px"
+                  height="75px"
+                  style={{ borderRadius: "50%", margin: "1%", float: "center" }}
                 />
+                <br />
                 <h1 style={{ color: "white" }} className="heading">
                   WCE E-RESOURCE
                 </h1>
