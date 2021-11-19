@@ -62,12 +62,24 @@ function Profile() {
         <div>
           <Sidebar />
           <div className="content">
-            <div className="profileImg" style={{ marginTop: "12px" }}>
-              <img
-                style={{ borderRadius: "50%", width: "250px" }}
-                src="https://uni.wcoeapps.in/site/static/images/wcoe.jpg"
-                alt="wce"
-              />
+            <div
+              className="profileImg"
+              style={{ marginTop: "12px", textAlign: "center" }}
+            >
+              <div
+                style={{
+                  textAlign: "center",
+                  display: "inline-block"
+                }}
+                id="circle"
+              >
+                <h1
+                  style={{ margin: "20%", marginTop: "25%", fontSize: "80px" }}
+                >
+                  {userData.name.firstName[0]}
+                  {userData.name.lastName[0]}
+                </h1>
+              </div>
               <hr />
             </div>
 
