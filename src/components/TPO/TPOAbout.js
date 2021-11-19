@@ -20,7 +20,7 @@ function About() {
             "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
         }}
       >
-        <h1 style={{ textAlign: "center" }}>About </h1>
+        <h1 style={{ textAlign: "center" }}>ABOUT </h1>
         <img
           className="wceimgAbout"
           src="http://1.bp.blogspot.com/-UuzDvRUXjh8/Tdxi-0uSVkI/AAAAAAAAAUU/jRfpkra_mmc/s1600/Walchand+college+of+engineering%252C+sangli+memories_Cool+AMPSS....jpg"
@@ -41,23 +41,31 @@ function About() {
           <ul>
             <li>
               Harshal Kodgire :{" "}
-              <Link to="harshal.kodgire@walchandsangli.ac.in">
+              <a
+                style={{ color: "white" }}
+                href="harshal.kodgire@walchandsangli.ac.in"
+              >
                 harshal.kodgire@walchandsangli.ac.in
-              </Link>
+              </a>
             </li>
             <li>
-              {" "}
               Rutikesh Sawant :{" "}
-              <Link to="rutikesh.sawant@walchandsangli.ac.in">
-                harshal.kodgire@walchandsangli.ac.in
-              </Link>
+              <a
+                color="white"
+                style={{ color: "white" }}
+                href="rutikesh.sawant@walchandsangli.ac.in"
+              >
+                rutikesh.sawant@walchandsangli.ac.in
+              </a>
             </li>
             <li>
-              {" "}
               Nikhil Danapgol :{" "}
-              <Link to="nikhil.danapgol@walchandsangli.ac.in">
-                harshal.kodgire@walchandsangli.ac.in
-              </Link>
+              <a
+                style={{ color: "white" }}
+                href="nikhil.danapgol@walchandsangli.ac.in"
+              >
+                nikhil.danapgol@walchandsangli.ac.in{" "}
+              </a>
             </li>
           </ul>
           <hr />

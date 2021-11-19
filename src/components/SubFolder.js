@@ -21,7 +21,8 @@ function InsideFolder(props) {
         height: "140px",
         width: "100px",
         textAlign: "center",
-        display: "inline-block"
+        display: "inline-block",
+        marginRight: "5%"
       }}
     >
       <img
@@ -102,7 +103,18 @@ function SubFolder() {
       ) : (
         <div>
           <Sidebar />
-          <div className="content">
+          <div
+            className="content"
+            style={{
+              color: "white",
+              height: "580px",
+              // backgroundColor: "#4b84bd"
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+              backgroundImage:
+                "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+            }}
+          >
             <p>This is Branch page</p>
             {arr}
             {role === "faculty" ? (

@@ -28,7 +28,7 @@ function DisplayReso(props) {
           <a
             className="ResoDisplay"
             href={props.data.driveLink.webViewLink}
-            style={{ color: "white" }}
+            style={{ color: "black" }}
           >
             view
           </a>
@@ -36,7 +36,7 @@ function DisplayReso(props) {
           <a
             className="ResoDisplay"
             href={props.data.driveLink.webContentLink}
-            style={{ color: "white" }}
+            style={{ color: "black" }}
           >
             Download
           </a>
@@ -46,8 +46,8 @@ function DisplayReso(props) {
           <p className="ResoDisplay" style={{ display: "inline-block" }}>
             {props.data.timestamp}
           </p>
+          <hr />
         </div>
-        <br />
         <br />
       </div>
     );
@@ -83,8 +83,8 @@ function DisplayReso(props) {
           <p className="ResoDisplay" style={{ display: "inline-block" }}>
             {props.data.timestamp}
           </p>
+          <hr />
         </div>
-        <br />
         <br />
       </div>
     );
@@ -255,7 +255,17 @@ function MainContent() {
       ) : (
         <div>
           <Sidebar />
-          <div className="content">
+          <div
+            className="content"
+            style={{
+              color: "white",
+              // backgroundColor: "#4b84bd"
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+              backgroundImage:
+                "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+            }}
+          >
             {/* {arr} */}
             <h1>Upload a file</h1>
             <hr />
@@ -347,7 +357,9 @@ function MainContent() {
             <br />
             <h1>Resources</h1>
             <hr />
-            {arr}
+            {/* <div style={{ backgroundColor: "#045692" }}>{arr}</div> */}
+
+            <div>{arr}</div>
           </div>
         </div>
       )}

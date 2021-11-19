@@ -32,7 +32,8 @@ function ResoFolder(props) {
         height: "140px",
         width: "100px",
         textAlign: "center",
-        display: "inline-block"
+        display: "inline-block",
+        marginRight: "5%"
       }}
     >
       <img
