@@ -26,3 +26,10 @@
   border-width: 0.5px;
   font-size: 1.5rem;
 }
+
+#circle {
+  background: lightblue;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
