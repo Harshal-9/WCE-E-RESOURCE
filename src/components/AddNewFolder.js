@@ -12,7 +12,7 @@ function AddNewFolder(props) {
       }}
     >
       <img
-        src="https://lh3.googleusercontent.com/d/1QSzMI9u9Av7iLPRaEgVFt1ItXeI2DZq3=s220?authuser=0"
+        src="https://lh3.googleusercontent.com/d/1346ol6YQ3MUwU6UjYqAN-K_mNCLL1FRR=s220?authuser=0"
         alt="img"
         width="100"
         height="100"
