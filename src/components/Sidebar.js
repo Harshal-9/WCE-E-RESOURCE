@@ -5,11 +5,18 @@ import "../SidebarStyles.css";
 function Sidebar() {
   return (
     <div className="sidebarMain">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="sidebar">
-        {/* <NavLink activeClassName="active" exact to="/StudentPage">
-          Home
-        </NavLink> */}
+        <div style={{ textAlign: "center" }}>
+          <img
+            src="https://uni.wcoeapps.in/site/static/images/wcoe.jpg"
+            alt="wceImg"
+            width="75px"
+            height="75px"
+            style={{ borderRadius: "50%", margin: "2px" }}
+          />
+        </div>
+
         <NavLink activeClassName="active" exact to="/StudentPage/profile">
           Profile
         </NavLink>
