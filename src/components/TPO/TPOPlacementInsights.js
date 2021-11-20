@@ -89,10 +89,9 @@ function TPOPlacementInsights() {
         <div>
           <Sidebar />
           <div
-            className="content"
+            className="content TPOPlacementInsightsRespo"
             style={{
               color: "white",
-              height: "1000px",
               // backgroundColor: "#4b84bd"
               backgroundRepeat: "no-repeat",
               backgroundSize: "100% 100%",

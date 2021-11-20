@@ -60,7 +60,7 @@ function Profile() {
         <div>
           <TPOSidebar />
           <div
-            className="content"
+            className="content ProfileRespoContent"
             style={{
               backgroundSize: "100% 100%",
               backgroundRepeat: "no-repeat",
@@ -96,7 +96,7 @@ function Profile() {
             </div>
 
             <br />
-            <table style={{ width: "100%" }}>
+            <table className="ProfileRespo">
               <tr>
                 <td className="ProfileTdTitle">Username :</td>
                 <td className="ProfileTdContent">{userData.username}</td>

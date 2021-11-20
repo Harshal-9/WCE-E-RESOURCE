@@ -12,3 +12,29 @@
   color: black;
   /* background-color: #327ac2; */
 }
+
+.TPOPlacementInsightsRespo {
+  height: 100vh;
+}
+
+@media only screen and (max-width: 700px) {
+  .TPOPlacementInsightsRespo {
+    height: auto;
+  }
+
+  .TPOPI {
+    width: 100%;
+    margin: 0;
+  }
+
+  .TPOPI * {
+    display: block;
+    margin: auto;
+  }
+
+  .TPOPI #interviewExp {
+    display: block;
+    margin: auto;
+    display: none;
+  }
+}
