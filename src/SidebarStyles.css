@@ -225,8 +225,25 @@ button {
   height: 100vh;
 }
 
+.TPONotificationRespo {
+  height: auto;
+}
+
+.TPONotificationRespo textarea {
+  width: 500px;
+}
+
 @media only screen and (max-width: 600px) {
   .ResourceRoomsRespo {
     height: auto;
+  }
+
+  .TPONotificationRespo {
+    height: auto;
+  }
+
+  .TPONotificationRespo textarea {
+    display: block;
+    width: 100%;
   }
 }

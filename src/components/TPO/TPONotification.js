@@ -109,10 +109,9 @@ function Notification() {
         <div>
           <Sidebar />
           <div
-            className="content"
+            className="content TPONotificationRespo"
             style={{
               textAlign: "center",
-              height: "1000px",
               color: "white",
               // backgroundColor: "#4b84bd"
               backgroundRepeat: "no-repeat",
@@ -138,7 +137,6 @@ function Notification() {
                 cols="30"
                 style={{
                   resize: "none",
-                  width: "500px",
                   height: "100px",
                   backgroundColor: "#85bef7",
                   // backgroundColor: "#327ac2",
@@ -152,7 +150,7 @@ function Notification() {
             <br />
             <hr />
             <h1>Previous notification</h1>
-            {notificationArray}
+            <div style={{ marginBottom: "50px" }}>{notificationArray}</div>
           </div>
         </div>
       ) : (

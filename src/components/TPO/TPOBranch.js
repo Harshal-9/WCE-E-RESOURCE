@@ -83,7 +83,7 @@ function Subjects() {
     <div>
       {fromWhere === "student" ? <StudentSidebar /> : <TPOSidebar />}
       <div
-        className="content"
+        className="content ResourceRoomsRespo"
         style={{
           color: "white",
           height: "850px",
