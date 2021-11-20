@@ -86,7 +86,7 @@ function Subjects() {
         className="content"
         style={{
           color: "white",
-          // height: "100vh",
+          height: "850px",
           // backgroundColor: "#4b84bd"
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",

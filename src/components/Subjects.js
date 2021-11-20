@@ -109,10 +109,10 @@ function Subjects() {
         <div>
           <Sidebar />
           <div
-            className="content"
+            className="content ResourceRoomsRespo"
             style={{
               color: "white",
-              height: "580px",
+              // height: "580px",
               // backgroundColor: "#4b84bd"
               backgroundRepeat: "no-repeat",
               backgroundSize: "100% 100%",

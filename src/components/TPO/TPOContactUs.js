@@ -7,10 +7,10 @@ function ContactUs() {
     <div>
       <Sidebar />
       <div
-        className="content"
+        className="content ContactUsRespo"
         style={{
           color: "white",
-          height: "600px",
+          // height: "100%",
           // backgroundColor: "#4b84bd"
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",
@@ -45,7 +45,7 @@ function ContactUs() {
           </h4>
         </div>
         <div
-          class="contactMe"
+          className="contactMe"
           style={{
             color: "white",
             // backgroundColor: "#4b84bd"

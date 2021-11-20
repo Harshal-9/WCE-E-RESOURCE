@@ -112,6 +112,7 @@ function Notification() {
             className="content"
             style={{
               textAlign: "center",
+              height: "1000px",
               color: "white",
               // backgroundColor: "#4b84bd"
               backgroundRepeat: "no-repeat",
