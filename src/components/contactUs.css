@@ -35,3 +35,25 @@
   width: 150px;
   display: inline-block;
 }
+
+.ContactUsRespo {
+  height: 100vh;
+}
+
+@media only screen and (max-width: 700px) {
+  .first,
+  .second,
+  .contactMe {
+    float: none;
+    width: 80%;
+  }
+
+  .content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ContactUsRespo {
+    height: auto;
+  }
+}

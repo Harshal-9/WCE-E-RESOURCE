@@ -78,6 +78,7 @@ function StudentPlacementPage() {
             style={{
               textAlign: "center",
               color: "white",
+              // height: "100%",
               // backgroundColor: "#4b84bd"
               backgroundRepeat: "no-repeat",
               backgroundSize: "100% 100%",
