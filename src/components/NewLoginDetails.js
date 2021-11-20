@@ -90,6 +90,7 @@ function LoginDetails() {
                 textAlign: "center",
                 marginLeft: "20%",
                 marginRight: "20%",
+                marginBottom: "100px",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "100% 100%",
                 backgroundImage:

@@ -31,3 +31,23 @@ table {
   margin-right: 10px;
   color: black;
 }
+
+@media only screen and (max-width: 700px) {
+  .searchResource {
+    display: block;
+    width: 100%;
+  }
+
+  .ShowYourResources_tr_respo {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+
+  .ShowYourResources_tr_respo td {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -48,12 +48,9 @@
     width: 80%;
   }
 
-  .content {
-    width: 100%;
-    text-align: center;
-  }
-
   .ContactUsRespo {
     height: auto;
+    width: 100%;
+    text-align: center;
   }
 }

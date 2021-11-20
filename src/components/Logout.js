@@ -14,7 +14,7 @@ function Logout() {
         style={{
           verticalAlign: "center",
           color: "#ADD8E6",
-          height: "580px",
+          height: "100vh",
           // backgroundColor: "#4b84bd"
           backgroundRepeat: "no-repeat",
           backgroundSize: "100% 100%",

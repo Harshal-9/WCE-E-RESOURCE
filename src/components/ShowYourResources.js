@@ -64,7 +64,7 @@ function ShowYourResourcesCode(props) {
 
   return (
     <div style={{ backgroundColor: "wheat", color: "black" }}>
-      <tr>
+      <tr className="ShowYourResources_tr_respo">
         <td className="ShowYourResources_srno">{resources[0].srNO}</td>
         <td className="ShowYourResources_td">{resources[0].resourceName}</td>
         <td className="ShowYourResources_view">{resources[0].view}</td>
@@ -276,15 +276,15 @@ function ShowYourResources() {
               <br />
               <br />
               {arr.length > 0 ? (
-                <tr>
-                  <td className="ShowYourResources_srno">SrNo</td>
-                  <td className="ShowYourResources_td">Resource Name</td>
-                  <td className="ShowYourResources_view">View</td>
-                  <td className="ShowYourResources_download">Download</td>
-                  <td className="ShowYourResources_td">Date</td>
-                  <td className="ShowYourResources_td">Room</td>
-                  <td className="ShowYourResources_td">Author</td>
-                  <td className="ShowYourResources_td">Delete</td>
+                <tr className="ShowYourResources_tr_respo">
+                  <td className=" ShowYourResources_srno">SrNo</td>
+                  <td className="ShowYourResources_td ">Resource Name</td>
+                  <td className="ShowYourResources_view ">View</td>
+                  <td className="ShowYourResources_download ">Download</td>
+                  <td className="ShowYourResources_td ">Date</td>
+                  <td className="ShowYourResources_td ">Room</td>
+                  <td className="ShowYourResources_td ">Author</td>
+                  <td className="ShowYourResources_td ">Delete</td>
                 </tr>
               ) : null}
               <hr />
@@ -300,7 +300,7 @@ function ShowYourResources() {
                 <h2>All resources</h2>
               </div>
               <br />
-              <tr>
+              <tr className="ShowYourResources_tr_respo">
                 <td className="ShowYourResources_srno">SrNo</td>
                 <td className="ShowYourResources_td">Resource Name</td>
                 <td className="ShowYourResources_view">View</td>

@@ -87,7 +87,12 @@ function StudentPlacementPage() {
             }}
           >
             <div
-              style={{ textAlign: "center", color: "white", fontSize: "20px" }}
+              style={{
+                textAlign: "center",
+                color: "white",
+                fontSize: "20px",
+                marginBottom: "250px"
+              }}
             >
               {notificationArray}
               <br />

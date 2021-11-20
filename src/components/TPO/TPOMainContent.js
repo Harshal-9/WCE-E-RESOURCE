@@ -243,7 +243,17 @@ function TPOMainContent() {
       ) : (
         <div>
           {role === "TPO" ? <TPOSidebar /> : <Sidebar />}
-          <div className="content">
+          <div
+            className="content"
+            style={{
+              color: "white",
+              // backgroundColor: "#4b84bd"
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "100% 100%",
+              backgroundImage:
+                "url(https://media.istockphoto.com/photos/dark-blue-de-focused-blurred-motion-abstract-background-picture-id1216628493?b=1&k=20&m=1216628493&s=170667a&w=0&h=XgGPQTxjdXuWOVHtTPo-zZziQG-qffO5_K4dppHpccI=)"
+            }}
+          >
             {role === "TPO" ? (
               <div>
                 <h1>Upload a file</h1>
